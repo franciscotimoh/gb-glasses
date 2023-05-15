@@ -37,10 +37,10 @@ def get_distance():
     return distance
 
 # Call the get_distance() function to retrieve the distance
-distance = get_distance()
-
+# distance = get_distance()
+ 
 # Print the distance to the console
-print("Distance : {} cm".format(distance))
+# print("Distance : {} cm".format(distance))
 
 # Cleanup GPIO settings
-GPIO.cleanup()
+# GPIO.cleanup()
