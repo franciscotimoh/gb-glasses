@@ -27,6 +27,10 @@ Make sure you have a webcam or camera plugged in into your work station.
 ### Iteration 1
 https://youtu.be/HQ8TKWEDKyo
 
+## Next Steps
+We are looking to develop a new GRU model for our project. At the moment, the team is still doing research in designing and developing a new model.
+Currently we are reading Deep Learning with Python (2nd Edition) by Francois Chollet: https://tanthiamhuat.files.wordpress.com/2018/03/deeplearningwithpython.pdf
+
 ## Sources in use
 - YoloV5, Ultralytics: https://github.com/ultralytics/yolov5
 - Speech Recognition, Uberi: https://github.com/Uberi/speech_recognition#readme
