@@ -26,3 +26,8 @@ Make sure you have a webcam or camera plugged in into your work station.
 ## Demonstrations
 ### Iteration 1
 https://youtu.be/HQ8TKWEDKyo
+
+## Sources in use
+- YoloV5, Ultralytics: https://github.com/ultralytics/yolov5
+- Speech Recognition, Uberi: https://github.com/Uberi/speech_recognition#readme
+- PyAudio: https://people.csail.mit.edu/hubert/pyaudio/
