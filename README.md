@@ -170,8 +170,14 @@ Dataset Link: [https://universe.roboflow.com/timbim1681/guidance-glasses](https:
 ## Acknowledgments
 
 * Special thanks to Jeffrey Truong and his team members Claire Hyon, Joshua Liu, and Brandon Takaki, as well as Professor Marco Levorato for permission and guidance regarding building upon their initial project
+* Pedestrian Signal Images Dataset. UCI Senior Project (2023). Roboflow Universe (Version 1.0) [Software]. Available from https://universe.roboflow.com/uci-senior-project/pedestrian-signals/dataset/9. https://roboflow.com/ computer vision.
 * Roboflow Universe (https://universe.roboflow.com/) for access to public, labelled datasets
+* Dwyer, B., Nelson, J. (2022). Roboflow (Version 1.0) [Software]. Available from https://roboflow.com. computer vision.
 * @guaravk5 for the MaxSonar-EZ0-Sensor repository used in integration of ultrasonic sensor and haptic feedback
+* HAWC_AI Computer Vision Project. Kolattukudy, J. (2023). Roboflow Universe (Version 1.0) [Software]. Available from https://universe.roboflow.com/joseph-kolattukudy/hawc_ai/dataset/1/images/?split=train&numImages=100. https://roboflow.com/ computer vision.
+* July 29th Annotations, Kolattukudy, J. (2023). Roboflow Universe (Version 1.0) [Software]. Available https://universe.roboflow.com/joseph-kolattukudy/july-29th-annotations. https://roboflow.com/ computer vision.
+* VehicleCount Computer Vision Project, Fyp (2023). Roboflow Universe (Version 1.0) [Software]. Available https://universe.roboflow.com/fyp-5ctjf/vehiclecount. https://roboflow.com/ computer vision.
+* PedestriansDetection Computer Vision Project, Reg, V (2023). Roboflow Universe (Version 1.0) [Software]. Available from https://universe.roboflow.com/victor-reg/pedestriansdetection computer vision.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
