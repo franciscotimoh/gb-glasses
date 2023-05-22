@@ -11,6 +11,9 @@ def speech_to_text():
 
     Returns:
         Converted speech to text
+
+    Raises:
+        Exception: inconclusive speech, non-speech sounds, or absolutely no sound
     """
 
     # Creates a new Recognizer instance, a collection of speech recognition functionality.
