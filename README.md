@@ -65,7 +65,7 @@ The goal of continuing this project was to increase the reliability of the model
 ### Built With
 Python 3.8.10 (YoloV5, PyTorch, PyAudio)
 
-C++ (Wire.h, Adafruit_DRV2605)
+C++ (MaxSonar-EZ0 Sensor https://github.com/gauravk5/MaxSonar-EZ0-Sensor)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,9 +167,9 @@ Project Link: [https://github.com/timbim1681/gb-glasses](https://github.com/timb
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* Special thanks to Jeffrey Truong and his team members Claire Hyon, Joshua Liu, and Brandon Takaki, as well as Professor Marco Levorato for permission and guidance regarding building upon their initial project
+* Roboflow Universe (https://universe.roboflow.com/) for access to public, labelled datasets
+* @guaravk5 for the MaxSonar-EZ0-Sensor repository used in integration of ultrasonic sensor and haptic feedback
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
