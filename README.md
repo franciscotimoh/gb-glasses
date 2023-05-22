@@ -18,14 +18,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -34,23 +26,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
-
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
-  </p>
-</div>
-
-
+<h3 align="center">Guidance Glasses</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -83,9 +59,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+This is a continuation of a senior design project titled, "Guidance Glasses", which used YoloV5 Image Recognition to create a model that can distinguish between walk and wait signs at crosswalks. 
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+The goal of continuing this project was to increase the reliability of the model as well as add extra sensors to assist in making the decision to cross as well as with obstacles during crossing.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,14 +69,16 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+Python 3.8.10
+
+1. YoloV5
+2. PyTorch
+3. PyAudio
+
+C
+
+1. Wire.h
+2. Adafruit_DRV2605
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,10 +161,15 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Tim Oh - FranciscoTimOh@gmail.com
+
 Donovan Chen - DonovanAChen@gmail.com
+
 Jake Silverman - jlsilverman54@gmail.com
+
 Diego Solorzano - diegoasolo12@gmail.com
+
 Luke Vargas - lukevargas34@gmail.com
+
 Hyungcheol Kim - hckimhyungcheol@gmail.com
 
 Project Link: [https://github.com/timbim1681/gb-glasses](https://github.com/timbim1681/gb-glasses)
