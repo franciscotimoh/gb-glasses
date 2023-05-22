@@ -113,10 +113,10 @@ First iteration example: https://youtu.be/HQ8TKWEDKyo
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Complete individual microphone and ultrasonic code
-- [ ] Integrate each piece into the main function
-- [ ] Improve the training for the image recognition model, add arbitrary weights for other pieces, further integrate main function
-    - [ ] Haptic feedback for walking with ultrasonic code
+- ✔️ Complete individual microphone and ultrasonic code
+- ✔️ Integrate each piece into a main function
+- ✔️ Improve the training for the image recognition model, add arbitrary weights for other pieces, further integrate main function
+    - ✔️ Haptic feedback for walking with ultrasonic code
 
 ### Future Features
 1. Use a GRU to create a model for the integration of camera, microphone, and ultrasonic input to provide a walk or wait output based on real-life training
