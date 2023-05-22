@@ -21,11 +21,6 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
 <h3 align="center">Guidance Glasses</h3>
 
 <!-- TABLE OF CONTENTS -->
@@ -73,7 +68,6 @@ Python 3.8.10 (YoloV5, PyTorch, PyAudio)
 C (Wire.h, Adafruit_DRV2605)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
