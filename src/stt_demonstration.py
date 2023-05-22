@@ -80,6 +80,7 @@ def main():
                 image_probability = 0
         print(image_probability)
 
+           # Tells users to walk or not to walk based off of certainity after speech to text
         if image_probability > 0.75:
             print('YOU CAN WALK')
         else:
