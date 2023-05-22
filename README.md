@@ -65,7 +65,7 @@ The goal of continuing this project was to increase the reliability of the model
 ### Built With
 Python 3.8.10 (YoloV5, PyTorch, PyAudio)
 
-C (Wire.h, Adafruit_DRV2605)
+C++ (Wire.h, Adafruit_DRV2605)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
