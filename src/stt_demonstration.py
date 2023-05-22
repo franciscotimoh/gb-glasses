@@ -28,7 +28,7 @@ def speech_to_text(queue):
 
             # You can walk
             if 'walk sign' in said:
-                print('\nHeard walk sign: you may cross\n')
+                print('\nHeard walk sign\n')
 
             # Heard wait, continues to listen for "walk sign"
             elif 'wait' in said:
@@ -69,7 +69,7 @@ def main():
         result = queue.get()
         print("Received result:", result)
 
-        # Determines the new certainity to cross the street
+        # Determines the new certainty to cross the street
         if 'walk sign' in result:
             image_probability = image_probability * 1.25
             if image_probability > 1:
@@ -79,6 +79,11 @@ def main():
             if image_probability < 0:
                 image_probability = 0
         print(image_probability)
+
+        if image_probability > 0.75:
+            print('YOU CAN WALK')
+        else:
+            print('DO NOT WALK')
 
 
 if __name__ == '__main__':
