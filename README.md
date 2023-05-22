@@ -1,13 +1,118 @@
-# Guidance Glasses
-## Guidance Glasses Engineering Project - Gamma Beta Class
-The goal of the guidance glasses is to **assist visually impaired people** in being able to **safely cross the street**. The glasses use a combination of information provided by a camera and a microphone to determine whether it is safe enough to cross. The ultrasonic provides additional information about obstacles in front of the user. This is then communicated to the user through vibrations from haptic feedback motors as the user crosses the street.
-- The camera uses a ML model (YoloV5) to detect and recognize pedestrian stop or walk signs. 
-- The microhpone listens to sounds that might come from pedestrian walk and stop signals to add to the algorithms confidence level on if it is a walk signal or not. It also measures the decibels of ambient sounds to determine if there is a car.
-- The ultrasonic detects any objects within its range and how far they are to determine if an object is in the way.
-- Haptic feedback motors located on both temples then communicate all of this through vibrations of varying frequencies and intensities.
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<a name="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
 
-## How to set up the environment
+
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+<h3 align="center">project_title</h3>
+
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+  </p>
+</div>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Vue][Vue.js]][Vue-url]
+* [![Angular][Angular.io]][Angular-url]
+* [![Svelte][Svelte.dev]][Svelte-url]
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+Here is a guide on how to install and set up everything required to run this project. Ensure that each download is working according to each step before proceeding to the next.
+
+### Prerequisites
+
 1. Install YoloV5
 You may download directly as a Zip file from https://github.com/ultralytics/yolov5
 You may also use `git clone` to clone the repository
@@ -18,20 +123,117 @@ You may also use `git clone` to clone the repository
 6. In the YoloV5 file, open Terminal (or your OS's equivalent) and run `pip install -r requirements.txt` to download all necessary modules and components. 
 7. Ensure that YoloV5 works by running this code in the Terminal of your YoloV5 directory: `python detect.py --source 0`
 Make sure you have a webcam or camera plugged in into your work station.
-8. If `detect.py` runs well, download all the files in the /src directory of our repository and put it in the YoloV5 directory.
-9. Run the main function
 
-*Note: Setup instructions will be updated accordingly as we progress with the project*
+### Installation
 
-## Demonstrations
-### Iteration 1
-https://youtu.be/HQ8TKWEDKyo
+Clone the repository using git to download the project's files.
+   ```sh
+   git clone https://github.com/timbim1681/gb-glasses
+   ```
 
-## Next Steps
-We are looking to develop a new GRU model for our project. At the moment, the team is still doing research in designing and developing a new model.
-Currently we are reading Deep Learning with Python (2nd Edition) by Francois Chollet: https://tanthiamhuat.files.wordpress.com/2018/03/deeplearningwithpython.pdf
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Sources in use
-- YoloV5, Ultralytics: https://github.com/ultralytics/yolov5
-- Speech Recognition, Uberi: https://github.com/Uberi/speech_recognition#readme
-- PyAudio: https://people.csail.mit.edu/hubert/pyaudio/
+Once you have installed the necessary prerequisites and cloned the repository, you can run the main function to test its functionality.
+
+If you wish to run the indivdual pieces (camera, microphone, ultrasonic), they are able to be run standalone by their functions.
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+First iteration example: https://youtu.be/HQ8TKWEDKyo
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [ ] Complete individual microphone and ultrasonic code
+- [ ] Integrate each piece into the main function
+- [ ] Improve the training for the image recognition model, add arbitrary weights for other pieces, further integrate main function
+    - [ ] Haptic feedback for walking with ultrasonic code
+
+### Future Features
+1. Use a GRU to create a model for the integration of camera, microphone, and ultrasonic input to provide a walk or wait output based on real-life training
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+As this is a closed team project, we will not be taking any direct pull requests or contributions. For any potential comments or concerns, contact one of the contributors to the project.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Tim Oh - FranciscoTimOh@gmail.com
+Donovan Chen - DonovanAChen@gmail.com
+Jake Silverman - jlsilverman54@gmail.com
+Diego Solorzano - diegoasolo12@gmail.com
+Luke Vargas - lukevargas34@gmail.com
+Hyungcheol Kim - hckimhyungcheol@gmail.com
+
+Project Link: [https://github.com/timbim1681/gb-glasses](https://github.com/timbim1681/gb-glasses)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+* []()
+* []()
+* []()
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-url]: https://github.com/github_username/repo_name/network/members
+[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-url]: https://github.com/github_username/repo_name/stargazers
+[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-url]: https://github.com/github_username/repo_name/issues
+[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/linkedin_username
+[product-screenshot]: images/screenshot.png
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[Vue-url]: https://vuejs.org/
+[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[Angular-url]: https://angular.io/
+[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[Svelte-url]: https://svelte.dev/
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[JQuery-url]: https://jquery.com 
