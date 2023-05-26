@@ -127,20 +127,32 @@ Serial.print("The distance = ");
 Serial.print(exact_cm_value);
 Serial.println(" cm ");
 
-//my code
-if ((exact_cm_value <= 250)  && (exact_cm_value > 200) ) {
-  drv.setWaveform(0, 50);  // buzz 4, see datasheet part 11.2
-  drv.setWaveform(2, 0);  // end of waveform
+
+if ((exact_cm_value <= 400)  && (exact_cm_value > 320) ) { //4m to 3.2m
+  
+  drv.setWaveform(0, 68);  // 20%
+
+  drv.go(); 
+}
+if ((exact_cm_value <= 320)  && (exact_cm_value > 240) ) { //3.2m to 2.4m
+  drv.setWaveform(0, 67);  // 40%
+
   drv.go();
 }
-else if ((exact_cm_value <= 200)  && (exact_cm_value > 120)) {
-  drv.setWaveform(0, 48);  // buzz 2
-  drv.setWaveform(2, 0);  
+
+else if ((exact_cm_value <= 240)  && (exact_cm_value > 160)) { //2.4m to 1.6m
+  drv.setWaveform(0, 66);  // 60%
+  
   drv.go();
 }
-else if (exact_cm_value <= 120) {
-  drv.setWaveform(0, 47);  // buzz 1
-  drv.setWaveform(2, 0);  
+else if ((exact_cm_value <= 160)  && (exact_cm_value > 80)) { //1.6m to .8m
+  drv.setWaveform(0, 65);  // 80%
+  
+  drv.go();
+}
+
+else if (exact_cm_value <= 80) { //.8m to 0m 
+  drv.setWaveform(0, 64);  // 100%
   drv.go();
 }
 
