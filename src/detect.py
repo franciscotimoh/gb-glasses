@@ -35,6 +35,7 @@ import sys
 from pathlib import Path
 
 import torch
+from multiprocessing import Process, Queue
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -51,7 +52,7 @@ from utils.torch_utils import select_device, smart_inference_mode
 
 
 @smart_inference_mode()
-def run(
+def run(certainty,
         weights=ROOT / 'model_v9.pt',  # model path or triton URL
         source=ROOT / 'data/images',  # file/dir/URL/glob/screen/0(webcam)
         data=ROOT / 'data/coco128.yaml',  # dataset.yaml path
@@ -99,6 +100,9 @@ def run(
     stride, names, pt = model.stride, model.names, model.pt
     imgsz = check_img_size(imgsz, s=stride)  # check image size
 
+    walk_certainty_average = []
+    wait_certainty_average = []
+
     # Dataloader
     bs = 1  # batch_size
     if webcam:
@@ -110,6 +114,7 @@ def run(
     else:
         dataset = LoadImages(source, img_size=imgsz, stride=stride, auto=pt, vid_stride=vid_stride)
     vid_path, vid_writer = [None] * bs, [None] * bs
+
 
     # Run inference
     model.warmup(imgsz=(1 if pt or model.triton else bs, 3, *imgsz))  # warmup
@@ -153,6 +158,37 @@ def run(
             if len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()
+                certainty_score = det[0][4].item()
+                if det[0][5] == 1:
+                    print(f'WALK sign certainty score is {certainty_score:.4f}')
+                    walk_certainty_average.append(certainty_score)
+                    if len(walk_certainty_average) == 5:
+                        if sum(walk_certainty_average) / 5 > 0.7:
+                            # print(f'probability is OVER 0.7: {(sum(walk_certainty_average) / 5):.4f} ')
+                            # print('\nYOU CAN WALK\n')
+                            certainty.put(walk_certainty_average)
+                            walk_certainty_average = []
+
+                        else:
+                            # print(f'probability is UNDER 0.7: {(sum(walk_certainty_average) / 5):.4f} ')
+                            # print('\nDO NOT WALK\n')
+                            certainty.put(walk_certainty_average)
+                            walk_certainty_average = []
+
+                if det[0][5] == 0:
+                    print(f'WAIT sign certainty score is {certainty_score:.4f}')
+                    wait_certainty_average.append(certainty_score)
+                    if len(wait_certainty_average) == 5:
+                        if sum(wait_certainty_average) / 5 > 0.7:
+                            # print(f'probability is OVER 0.7: {(sum(wait_certainty_average) / 5):.4f} ')
+                            # print('\nDEFINITELY DO NOT WALK\n')
+                            certainty.put(wait_certainty_average)
+                            wait_certainty_average = []
+                        else:
+                            # print(f'probability is UNDER 0.7: {(sum(wait_certainty_average) / 5):.4f} ')
+                            # print('\nDO NOT WALK\n')
+                            certainty.put(wait_certainty_average)
+                            wait_certainty_average = []
 
                 # Print results
                 for c in det[:, 5].unique():
@@ -204,7 +240,7 @@ def run(
                     vid_writer[i].write(im0)
 
         # Print time (inference-only)
-        LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
+        # LOGGER.info(f"{s}{'' if len(det) else '(no detections), '}{dt[1].dt * 1E3:.1f}ms")
 
     # Print results
     t = tuple(x.t / seen * 1E3 for x in dt)  # speeds per image
@@ -251,7 +287,7 @@ def parse_opt():
     return opt
 
 
-def mayne(opt):
+def mayne(opt, certainty):
     weights = 'model_v9.pt'
     source = 0  # Webcam
     data = 'data/coco128.yaml'
@@ -281,7 +317,7 @@ def mayne(opt):
     vid_stride = 1
 
     check_requirements(ROOT / 'requirements.txt', exclude=('tensorboard', 'thop'))
-    run(
+    certainty_score = run(certainty,
         weights=weights,
         source=source,
         data=data,
