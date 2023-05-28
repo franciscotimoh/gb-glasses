@@ -123,7 +123,6 @@ This is repreated every 100ms
 sensorRead();
 array_arrangment(array,arraysize);
 exact_cm_value= filter(array,arraysize);
-Serial.print("The distance = ");
 Serial.print(exact_cm_value);
 Serial.println(" cm ");
 
@@ -134,7 +133,7 @@ if ((exact_cm_value <= 400)  && (exact_cm_value > 320) ) { //4m to 3.2m
 
   drv.go(); 
 }
-if ((exact_cm_value <= 320)  && (exact_cm_value > 240) ) { //3.2m to 2.4m
+else if ((exact_cm_value <= 320)  && (exact_cm_value > 240) ) { //3.2m to 2.4m
   drv.setWaveform(0, 67);  // 40%
 
   drv.go();
@@ -145,6 +144,7 @@ else if ((exact_cm_value <= 240)  && (exact_cm_value > 160)) { //2.4m to 1.6m
   
   drv.go();
 }
+
 else if ((exact_cm_value <= 160)  && (exact_cm_value > 80)) { //1.6m to .8m
   drv.setWaveform(0, 65);  // 80%
   
