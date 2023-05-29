@@ -16,7 +16,7 @@ def calc_decibel():
         average decibels in three seconds
 
     """
-    
+
     # settings to record .wav file: 1024 samples, 16 bits per sample, 44100 sampls per second
     CHUNK = 1024
     total_decibel_list = []
@@ -26,13 +26,13 @@ def calc_decibel():
     sample_format = pyaudio.paInt16
     channels = 2
     fs = 44100
-    interval = 1
+    interval = .5
     filename = "output.wav"
 
     # Create an interface to PortAudio
     p = pyaudio.PyAudio()
 
-    print('Recording for decibels...')
+    # print('Recording for decibels...')
 
     # Starts recording
     stream = p.open(format=sample_format,
@@ -47,26 +47,35 @@ def calc_decibel():
     for i in range(0, int(fs / CHUNK * interval)):
         data = stream.read(CHUNK)
         rms = audioop.rms(data, 2)
-        decibel1 = 20 * log10(rms)
-        one_sec_decibel.append(decibel1)
-        total_decibel_list.append(decibel1)
-        frames.append(data)
+        try:
+            decibel1 = 20 * log10(rms)
+            one_sec_decibel.append(decibel1)
+            total_decibel_list.append(decibel1)
+            frames.append(data)
+        except ValueError:
+            pass
 
     for i in range(0, int(fs / CHUNK * interval)):
         data = stream.read(CHUNK)
         rms = audioop.rms(data, 2)
-        decibel2 = 20 * log10(rms)
-        two_sec_decibel.append(decibel2)
-        total_decibel_list.append(decibel2)
-        frames.append(data)
+        try:
+            decibel2 = 20 * log10(rms)
+            two_sec_decibel.append(decibel2)
+            total_decibel_list.append(decibel2)
+            frames.append(data)
+        except ValueError:
+            pass
 
     for i in range(0, int(fs / CHUNK * interval)):
         data = stream.read(CHUNK)
         rms = audioop.rms(data, 2)
-        decibel3 = 20 * log10(rms)
-        three_sec_decibel.append(decibel3)
-        total_decibel_list.append(decibel3)
-        frames.append(data)
+        try:
+            decibel3 = 20 * log10(rms)
+            three_sec_decibel.append(decibel3)
+            total_decibel_list.append(decibel3)
+            frames.append(data)
+        except ValueError:
+            pass
 
     # Stop and close the stream
     stream.stop_stream()
@@ -75,7 +84,7 @@ def calc_decibel():
     # Terminate the PortAudio interface
     p.terminate()
 
-    print('Finished recording for decibels.')
+    # print('Finished recording for decibels.')
 
     # Save the recorded data as a WAV file
     wf = wave.open(filename, 'wb')
@@ -86,10 +95,14 @@ def calc_decibel():
     wf.close()
 
     # Finds the average decibels from 0 to 1 seconds, 1 to 2 seconds, and 2 to 3 seconds, and across total 3 seconds
-    first_average = sum(one_sec_decibel) / len(one_sec_decibel)
-    second_average = sum(two_sec_decibel) / len(two_sec_decibel)
-    third_average = sum(three_sec_decibel) / len(three_sec_decibel)
-    average_decibel = (first_average + second_average + third_average) / (len(one_sec_decibel) + len(two_sec_decibel) + len(three_sec_decibel))
+    try:
+        first_average = sum(one_sec_decibel) / len(one_sec_decibel)
+        second_average = sum(two_sec_decibel) / len(two_sec_decibel)
+        third_average = sum(three_sec_decibel) / len(three_sec_decibel)
+        average_decibel = (first_average + second_average + third_average) / (
+                    len(one_sec_decibel) + len(two_sec_decibel) + len(three_sec_decibel))
+    except ZeroDivisionError:
+        calc_decibel()
 
     # Compares the average decibels to determine if a car is coming towards you or not or neither
     if first_average < second_average < third_average:
@@ -99,4 +112,5 @@ def calc_decibel():
     else:
         print('\nNot getting louder or quieter.\n')
 
-    return average_decibel
+    return calc_decibel()
+
