@@ -119,7 +119,9 @@ First iteration example: https://youtu.be/HQ8TKWEDKyo
     - ✔️ Haptic feedback for walking with ultrasonic code
 
 ### Future Features
-1. Use a GRU to create a model for the integration of camera, microphone, and ultrasonic input to provide a walk or wait output based on real-life training
+1. Update data set for multi-classifcation of objects rather than binary classification of walk vs don't walk, for the purpose of the camera assisting in avoiding obstacles while the user is walking and not just to make the decision on whether or not to walk
+2. Train a model from scratch to classify audio files of cars passing by vs other sounds of life, by manipulating audio files into frequency graphs and train on their similarity 
+3. Use a GRU to create a model for the integration of camera, microphone, and ultrasonic input to provide a walk or wait output based on real-life data gathering and training
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
