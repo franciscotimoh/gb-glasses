@@ -171,7 +171,8 @@ Dataset Link: [https://universe.roboflow.com/timbim1681/guidance-glasses](https:
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Special thanks to Jeffrey Truong and his team members Claire Hyon, Joshua Liu, and Brandon Takaki, as well as Professor Marco Levorato for permission and guidance regarding building upon their initial project
+* Special thanks to Riya Goja and Danson Ma for mentoring our progress throughout this entire project
+* Thanks to Jeffrey Truong and his team members Claire Hyon, Joshua Liu, and Brandon Takaki, as well as Professor Marco Levorato for permission and guidance regarding building upon their initial project
 * Pedestrian Signal Images Dataset. UCI Senior Project (2023). Roboflow Universe (Version 1.0) [Software]. Available from https://universe.roboflow.com/uci-senior-project/pedestrian-signals/dataset/9. https://roboflow.com/ computer vision.
 * Roboflow Universe (https://universe.roboflow.com/) for access to public, labelled datasets
 * Dwyer, B., Nelson, J. (2022). Roboflow (Version 1.0) [Software]. Available from https://roboflow.com. computer vision.
